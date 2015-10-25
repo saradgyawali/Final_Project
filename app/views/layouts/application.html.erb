@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workout App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>WorkoutApp</title>
+  
   <!-- bootstrap css -->
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <%= stylesheet_link_tag :application, media: :all %>
 
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div class="simple-nav">
+      <%= link_to "Home", root_path %>
+      <!-- creates spacing between links -->
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      
+      <% if current_user %>
+        <%= link_to "Profile", profile_path %>
+        <!-- creates spacing between links -->
+        &nbsp;&nbsp;|&nbsp;&nbsp;
 
-	
-	  <%= yield %>
+        <% if false %>
+        <%= link_to "+ Recipe", new_recipe_path %>
+        <!-- creates spacing between links -->
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <% end %>
+
+        <%= link_to "Log Out", logout_path %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path %>
+        <!-- creates spacing between links -->
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to "Log In", login_path %>
+      <% end %>
+    </div>
 
 
+    <%= yield %>
+  </div>
 
-
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<!-- CJ: I would put these scripts above your application js b/c they most likely need to be loaded before your custom scripts -->
-	<!-- bootstrap js -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<!-- jquery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-
+  <%= javascript_include_tag :application %>
 </body>
 </html>
 
