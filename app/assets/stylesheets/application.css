@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+html {
+	height: 100%;
+}
+
+.muscle-man {
+    position: relative;
+	width: 700px;
+	height:650px;
+    margin: 0 auto;
+}
+
+.navbar-inverse {
+	height: 40px;
+	background-color: #B0FBDC;
+}
