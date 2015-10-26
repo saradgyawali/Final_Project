@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'site#index'
+  root 'site#show'
 
   #users routes
   get '/signup', to: 'users#new'

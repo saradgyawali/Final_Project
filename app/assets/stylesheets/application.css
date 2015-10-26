@@ -18,13 +18,26 @@ html {
 }
 
 .muscle-man {
-    position: relative;
+    position: absolute;
 	width: 700px;
 	height:650px;
-    margin: 0 auto;
+    margin-top: 50px;
 }
 
 .navbar-inverse {
 	height: 40px;
-	background-color: #B0FBDC;
+	background-color: #AA6869;
+}
+
+.workout-title {
+	z-index: +2;
+	position: absolute;
+	left:450px;
+	margin-top: 50px;
+
+}
+
+.col-md-3 {
+	margin-top: 20px;
+	width: 30%;
 }
